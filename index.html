@@ -1,200 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="SimpleProjectProgress – Projektfortschritt einfach, flexibel und übersichtlich dokumentieren.">
     <title>SimpleProjectProgress</title>
-
-    <style>
-        :root {
-            --green: #1FA84B;
-            --green-dark: #167D38;
-            --yellow: #FEC305;
-            --gray-light: #F4F5F7;
-            --gray: #D0D3DA;
-            --text: #182230;
-            --text-light: #5D6673;
-            --white: #FFFFFF;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
-            background: var(--gray-light);
-            line-height: 1.6;
-        }
-
-        header {
-            padding: 56px 24px;
-            text-align: center;
-            color: var(--white);
-            background: var(--green);
-        }
-
-        header h1 {
-            margin: 0 0 12px;
-            font-size: clamp(2rem, 6vw, 3.2rem);
-        }
-
-        header p {
-            max-width: 680px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        main {
-            width: min(900px, calc(100% - 32px));
-            margin: -28px auto 48px;
-        }
-
-        .card {
-            padding: 32px;
-            margin-bottom: 24px;
-            background: var(--white);
-            border-radius: 18px;
-            box-shadow: 0 8px 28px rgba(24, 34, 48, 0.10);
-        }
-
-        h2 {
-            margin-top: 0;
-            color: var(--green-dark);
-        }
-
-        .progress {
-            display: flex;
-            width: 100%;
-            height: 14px;
-            margin: 28px 0;
-            overflow: hidden;
-            border-radius: 999px;
-            background: var(--gray);
-        }
-
-        .progress-yellow {
-            width: 24%;
-            background: var(--yellow);
-        }
-
-        .progress-green {
-            width: 51%;
-            background: var(--green);
-        }
-
-        .progress-gray {
-            width: 25%;
-            background: var(--gray);
-        }
-
-        .links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-            gap: 16px;
-        }
-
-        .link-card {
-            display: block;
-            padding: 20px;
-            color: var(--text);
-            text-decoration: none;
-            border: 1px solid var(--gray);
-            border-radius: 14px;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-        }
-
-        .link-card:hover,
-        .link-card:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(24, 34, 48, 0.10);
-        }
-
-        .link-card strong {
-            display: block;
-            margin-bottom: 4px;
-            color: var(--green-dark);
-        }
-
-        footer {
-            padding: 24px;
-            text-align: center;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 44px 20px;
-            }
-
-            .card {
-                padding: 24px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>SimpleProjectProgress</h1>
+
+<header class="site-header">
+    <nav class="nav" aria-label="Hauptnavigation">
+        <a class="brand" href="">
+            <img src="assets/simpleprojectprogress-logo.png"
+                 alt="SimpleProjectProgress">
+        </a>
+        <div class="nav-links">
+            <a href="">Start</a>
+            <a href="datenschutz/">Datenschutz</a>
+            <a href="impressum/">Impressum</a>
+            <a href="support/">Support</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <p class="eyebrow">Android-App für klare Fortschrittsübersichten</p>
+            <h1>Projektfortschritt jederzeit im Blick.</h1>
+            <p class="lead">
+                SimpleProjectProgress unterstützt dabei, den Fortschritt
+                individueller Projekte einfach, flexibel und übersichtlich
+                zu dokumentieren.
+            </p>
+            <p class="claim">
+                Die App passt sich dem Projekt an – nicht umgekehrt.
+            </p>
+        </div>
+
+        <div class="progress-visual" aria-label="Beispiel eines Fortschrittsbalkens">
+            <div class="progress-track">
+                <div class="yellow"></div>
+                <div class="green"></div>
+                <div class="gray"></div>
+            </div>
+            <p class="progress-label">
+                Geplant · abgeschlossen · noch offen
+            </p>
+        </div>
+    </div>
+</section>
+
+<main>
+    <section class="content-card">
+        <h2>Einfach. Flexibel. Übersichtlich.</h2>
         <p>
-            Projektfortschritt einfach, flexibel und übersichtlich dokumentieren.
+            Eigene Status, individuelle Zielwerte und eine klare
+            Fortschrittsanzeige machen SimpleProjectProgress zu einem
+            schlanken Werkzeug für Projekte, bei denen Stückzahlen,
+            Datensätze, Vorgänge oder andere Einheiten im Mittelpunkt stehen.
         </p>
-    </header>
+    </section>
 
-    <main>
-        <section class="card">
-            <h2>Fortschritt im Blick behalten</h2>
+    <section aria-labelledby="informationen" style="margin-top: 32px;">
+        <h2 id="informationen">Informationen</h2>
+        <div class="card-grid">
+            <a class="card" href="datenschutz/">
+                <strong>Datenschutz</strong>
+                Informationen zur Verarbeitung personenbezogener Daten
+                und zum Einsatz von Google AdMob.
+            </a>
 
-            <p>
-                SimpleProjectProgress ist eine minimalistische Android-App zur
-                übersichtlichen Dokumentation individueller Projektfortschritte.
-            </p>
+            <a class="card" href="impressum/">
+                <strong>Impressum</strong>
+                Angaben zum privaten Anbieter und Verantwortlichen
+                von SimpleProjectProgress.
+            </a>
 
-            <p>
-                Eigene Status, flexible Projektziele und eine klare Fortschrittsanzeige
-                helfen dabei, den aktuellen Stand eines Projekts jederzeit nachzuvollziehen.
-            </p>
+            <a class="card" href="support/">
+                <strong>Support</strong>
+                Kontaktmöglichkeit für Fragen, Hinweise und technische
+                Rückmeldungen.
+            </a>
+        </div>
+    </section>
+</main>
 
-            <div class="progress" aria-label="Beispielhafter Fortschrittsbalken">
-                <div class="progress-yellow"></div>
-                <div class="progress-green"></div>
-                <div class="progress-gray"></div>
-            </div>
 
-            <p>
-                <strong>Die App passt sich dem Projekt an – nicht umgekehrt.</strong>
-            </p>
-        </section>
+<footer class="site-footer">
+    <div>© 2026 SimpleProjectProgress</div>
+    <nav aria-label="Fußnavigation">
+        <a href="datenschutz/">Datenschutz</a>
+        <a href="impressum/">Impressum</a>
+        <a href="support/">Support</a>
+    </nav>
+</footer>
 
-        <section class="card">
-            <h2>Informationen</h2>
-
-            <div class="links">
-                <a class="link-card" href="datenschutz.html">
-                    <strong>Datenschutz</strong>
-                    Informationen zur Verarbeitung personenbezogener Daten
-                </a>
-
-                <a class="link-card" href="impressum.html">
-                    <strong>Impressum</strong>
-                    Angaben zum Anbieter der App
-                </a>
-
-                <a class="link-card" href="support.html">
-                    <strong>Support</strong>
-                    Kontakt bei Fragen und Anregungen
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        © 2026 SimpleProjectProgress
-    </footer>
 </body>
 </html>
