@@ -29,6 +29,20 @@ body {
     line-height: 1.65;
 }
 
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    
+}
+
 a {
     color: var(--green-dark);
 }
